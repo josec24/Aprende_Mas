@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.container{
+    background: rgb(67,96,135);
+    background: linear-gradient(90deg, rgba(67,96,135,1) 0%, rgba(17,192,164,1) 100%);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 80%;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0px 0px 13px 3px rgba(0,0,0,0.61);
+    border-radius: 20px;
+    
+}
+
+.container .card .izq{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #2b849a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 0px 0px 20px;
+}
+
+
+
+.container .card .izq h1{
+    letter-spacing: 8px;
+    font-size: 50px;
+    padding-bottom: 40px;
+    color: white;
+}
+
+.container .card .der{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #1ba9a0;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.container .card .der .botones{
+    position: relative;
+    display: flex;
+    color: #fff;
+    justify-content: flex-end;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.container .card .der .botones .bot_ingresar,
+.container .card .der .botones .bot_crear_cuenta{
+    position: relative;
+    padding: 10px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.container .card .der .botones .bot_ingresar a,
+.container .card .der .botones .bot_crear_cuenta a{
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.container .card .der .ingresar,
+.container .card .der .crear_cuenta{
+    text-align: center;
+}
+
+.container .card .der .ingresar form label,
+.container .card .der .crear_cuenta form label{
+    display: block;
+    text-align: start;
+    padding-left: 65px;
+    padding-top: 10px;
+    color: #fff;
+    font-size: 23px;
+    letter-spacing: 2px;
+}
+
+.container .card .der .ingresar form input,
+.container .card .der .crear_cuenta form input{
+    position: relative;
+    width: 70%;
+    padding: 10px;
+    background: transparent;
+    border:none;
+    border-bottom: 2px solid #46e0c2;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.container .card .der .ingresar form input[type="submit"],
+.container .card .der .crear_cuenta form input[type="submit"]{
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: #3e74dd;
+    width: 30%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.container .card .der .ingresar form p,
+.container .card .der .crear_cuenta form p{
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.container .card .der .ingresar form a,
+.container .card .der .crear_cuenta form a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #3562c8;
+}
+
+.container.active .card .der .botones .bot_ingresar,
+.container.active .card .der .ingresar{
+    display: none;
+}
+
+.container.active .card .der .botones .bot_crear_cuenta,
+.container.active .card .der .crear_cuenta{
+    display: block;
+    visibility: visible;
+}
+
+.container .card .der .botones .bot_crear_cuenta,
+.container .card .der .crear_cuenta{
+    display: none;
+}
+
+.container .card .der .botones .bot_ingresar,
+.container .card .der .ingresar{
+    display: block;
+    visibility: visible;
+}
+
+.container.active .card .der .botones{
+    margin-bottom: 0px;
+}
