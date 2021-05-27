@@ -1,0 +1,42 @@
+import React from 'react';
+
+import CrearCurso_CSS from './CrearCurso.css';
+
+export function CrearCurso(){
+    return(
+        <div className="crear_curso_container">
+            <div className= "crear_header">
+                <div className="logo">
+                    <a href="">Aprende+</a>
+                </div>
+                <div className="titulo">
+                    <h2>Inteligencia Artificial</h2>
+                </div>
+                <div className="usuario">
+                
+                </div>
+            </div>
+            <div className="creador">
+                <div className="arriba">
+                    <div className="text">
+                        <input type="Text" placeholder="Aqui va el texto"></input>
+                    </div>
+                    <div className="check"></div>
+                    <div className="tacho"></div>
+                </div>
+                <div className="abajo">
+                    <div className="imagen">
+                        <a>Imagen</a>
+                    </div>
+                    <div className="video">
+                        <a>Video</a>
+                    </div>
+                    <div className="mas">
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    );
+}

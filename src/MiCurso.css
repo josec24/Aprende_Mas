@@ -1,0 +1,90 @@
+.mi_header{
+    background: #4162ff;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.mi_header .logo{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.mi_header .logo a{
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.mi_header .titulo{
+    background: #1a61d3;
+    height: 50px;
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.mi_header .usuario{
+   margin-right: 30px;
+   width: 55px;
+   height: 55px;
+   background: #fff;
+   border-radius: 30px;
+   box-shadow: 0px 1px 10px 3px rgba(0,0,0,0.54);
+   cursor: pointer;
+}
+
+.contenido{
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    height: 500px;
+    margin: 20px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.contenido .arriba{
+    display: flex;
+    padding: 20px;
+}
+
+
+.contenido .abajo{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.contenido .abajo .prueba,
+.contenido .abajo .chat_bot{
+    background: #fff;
+    padding: 2px 8px 2px 8px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 8px 3px rgba(0,0,0,0.54);
+    cursor: pointer;
+}
+
+.contenido .abajo .chat_bot{
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    background: #26de81;
+}
+
+.contenido .abajo .prueba{
+    height: 20px;
+    background: #1a61d3;
+    color: #fff;
+}
+
