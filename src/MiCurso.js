@@ -1,20 +1,14 @@
 import React from 'react';
 
 import MiCurso_CSS from './MiCurso.css';
+import Header from './components/header1'
 
-export function MiCurso(){
+function MiCurso(){
     return(
         <div className="mi_curso_container">
-            <div className= "mi_header">
-                <div className="logo">
-                    <a href="">Aprende+</a>
-                </div>
-                <div className="titulo">
-                    <h2>Inteligencia Artificial</h2>
-                </div>
-                <div className="usuario">
-                
-                </div>
+            <div>
+            {/* Se carga el fragmento header */}
+                <Header/>
             </div>
             <div className="contenido">
                 <div className="arriba">
@@ -46,3 +40,5 @@ export function MiCurso(){
 
     );
 }
+
+export default MiCurso

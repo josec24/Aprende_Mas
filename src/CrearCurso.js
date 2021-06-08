@@ -1,42 +1,23 @@
 import React from 'react';
 
 import CrearCurso_CSS from './CrearCurso.css';
+import Header from './components/header1'
+import CardCreador from './components/cardCreador'
 
-export function CrearCurso(){
+function CrearCurso(){
     return(
         <div className="crear_curso_container">
             <div className= "crear_header">
-                <div className="logo">
-                    <a href="">Aprende+</a>
-                </div>
-                <div className="titulo">
-                    <h2>Inteligencia Artificial</h2>
-                </div>
-                <div className="usuario">
-                
-                </div>
+                {/* Se carga el fragmento header */}
+                <Header/>
             </div>
-            <div className="creador">
-                <div className="arriba">
-                    <div className="text">
-                        <input type="Text" placeholder="Aqui va el texto"></input>
-                    </div>
-                    <div className="check"></div>
-                    <div className="tacho"></div>
-                </div>
-                <div className="abajo">
-                    <div className="imagen">
-                        <a>Imagen</a>
-                    </div>
-                    <div className="video">
-                        <a>Video</a>
-                    </div>
-                    <div className="mas">
-                        <a href="#">+</a>
-                    </div>
-                </div>
+            <div>
+                {/* Se cargan los card para crear tareas etc */}
+                <CardCreador/>
             </div>
         </div>
 
     );
 }
+
+export default CrearCurso

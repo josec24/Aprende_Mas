@@ -4,7 +4,7 @@ import App_CSS from './App.css';
 
 
 
-export function App(){
+function App(){
 
 
     const toggleForm=()=>{
@@ -40,8 +40,8 @@ export function App(){
                 </div>
                 <div className="crear_cuenta">
                     {
-                         <form>
-                         <label>Email</label>
+                        <form>
+                        <label>Email</label>
                         <input type="email" name="email"></input>
                         <label>Usuario</label>
                         <input type="text" name="name" ></input>
@@ -50,8 +50,8 @@ export function App(){
                         <input type="submit" name="button_ingresar" value="Crear Cuenta"></input>
                         <p className="redic_crear_cuenta">¿Ya tienes una cuenta?, Ingresa aqui <a href="#" onClick={()=>{toggleForm()}}>Iniciar cesión</a></p>
                     </form>
-                     
-                     }
+                    
+                    }
                 </div>
             </div>
             </div>
@@ -59,3 +59,5 @@ export function App(){
     </div>
     );
 }
+
+export default App
