@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MiCurso_CSS from './MiCurso.css';
-import Header from './components/header1'
+import Header from '../components/header1'
 
 function MiCurso(){
     return(
