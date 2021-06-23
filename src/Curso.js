@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Curso_CSS from './Curso.css';
-import CardCurso from '../components/cardCurso'
-import Header from '../components/header1'
+import CardCurso from './components/cardCurso'
+import Header from './components/header1'
 
 function Curso(){
     return(
