@@ -1,6 +1,8 @@
+import React from 'react';
+
 import CrearCurso_CSS from './CrearCurso.css';
-import Header from '../components/header1'
-import CardCreador from '../components/cardCreador'
+import Header from './components/header1'
+import CardCreador from './components/cardCreador'
 
 function CrearCurso(){
     return(
