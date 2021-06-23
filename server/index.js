@@ -6,7 +6,6 @@ const routes=require('./routes');
 
 const morgan=require('morgan');
 
-
 const app=express();
 //nuestra api rest ya se puede conectar a mongodb
 mongoose.Promise=global.Promise;//
