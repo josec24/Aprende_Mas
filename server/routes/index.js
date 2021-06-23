@@ -9,6 +9,7 @@ const customersController = require('../controllers/customersController');
 module.exports=function(){
     //post:/customers
     router.post('/customers',customersController.add);
+    router.post('/customers',customersController.add);
     //get: / customer
     router.get('/customers',customersController.list);
     //leer cliente
