@@ -1,7 +1,7 @@
 const express=require('express')
 const app=express()
 const mongoose=require('mongoose')
-const routesUrls=require('../Routes/routes')
+const userUrls=require('../Routes/user.routes')
 const cors=require('cors')
 
 
@@ -14,12 +14,9 @@ mongoose.connect('mongodb+srv://userjuan:aprendomas@cluster0.dzcfy.mongodb.net/s
 
 app.use(express.json())
 app.use(cors())
-app.use('/',routesUrls)
+app.use('/',userUrls)
 
 app.listen(3001,()=>{
     console.log("Server corriendo")
 });
 
-//react 3000
-
-//3001
