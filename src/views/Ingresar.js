@@ -1,23 +1,72 @@
 import { construct } from 'harmony-reflect';
 import robot from '../images/robot.svg';
 import App_CSS from './Ingresar.css';
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 import Axios from 'axios'
 
 function Ingresar(){
-    const [name,setName]=useState("");
-    const [lastname,setLastname]=useState("");
+    const [usuario,setUsuario]=useState("");
     const [email,setEmail]=useState("");
-    const [phone,setPhone]=useState(0);
-    const [days,setDays]=useState(0);
+    const [password,setPassword]=useState("");
     
+    const [usuarioLista,setUsuarioLista]=useState([])
+    const [verificador,setVerificador]=useState([])
+
+    useEffect(()=>{
+        Axios.get('http://localhost:3001/read').then((response)=>{
+            // console.log(response)
+            setUsuarioLista(response.data)
+        })
+    })
+
+    // const verificar=()=>{
+    //     console.log(usuarioLista[1])
+    // }
+
+    async function verificar1(){
+        verificar1()
+        
+        
+    }
+
+    function verificar(){
+        // console.log(email+name+lastname)
+
+        Axios.post('http://localhost:3001/verificar',{
+            email:email,
+            password:password,
+        }).then((response)=>{
+            // console.log(response.data)
+            setVerificador(response.data)
+            console.log(response.data);
+            if(response.data=="verdadero"){
+                location.href ="/CrearCurso";
+            }else{
+            }
+        })
+
+        // setTimeout(function(){
+        //     // console.log(response.data);
+        //     if(verificador=="verdadero"){
+        //         location.href ="/CrearCurso";
+        //     }else{
+        //     }
+        // },50);
+        
+        // console.log(verificador)
+        // if(verificador=="verdadero"){
+        //     location.href ="/CrearCurso";
+        // }else{
+        // }
+
+    }
+
     const addToList=()=>{
         // console.log(email+name+lastname)
         Axios.post('http://localhost:3001/signup',{
-            name:name,
-            lastname:lastname,
+            usuario:usuario,
             email:email,
-            phone:phone,
+            password:password,
         })
     }
 
@@ -45,11 +94,18 @@ function Ingresar(){
                 </div>
                 <div class="ingresar">
                     <form>
-                        <label>Usuario</label>
-                        <input type="text" name="name" ></input>
+                        <label>Email</label>
+                        <input type="email"
+                        onChange={(event)=>{setEmail(event.target.value)}}
+                        name="email" ></input>
                         <label>Contraseña</label>
-                        <input type="password" name="password" ></input>
-                        <input type="submit" name="button_ingresar" value="Ingresar"></input>
+                        <input type="password"
+                        onChange={(event)=>{setPassword(event.target.value)}}
+                        name="password" ></input>
+                        <div onClick={verificar} class="button">
+                            <p>Ingresar</p>
+                        </div>
+                        {/* <a class="button" onClick={verificar}>Ingresar</a> */}
                         <p className="redic_crear_cuenta">¿Aun sin cuenta?, Crea una cuenta aqui:  <a href="#" onClick={()=>{toggleForm()}}>Crear cuenta</a></p>
                     </form>
                 </div>
@@ -62,18 +118,18 @@ function Ingresar(){
                         name="email"></input>
                         <label>Usuario</label>
                         <input type="text" 
-                        onChange={(event)=>{setName(event.target.value)}}
+                        onChange={(event)=>{setUsuario(event.target.value)}}
                         name="name" ></input>
                         <label>Contraseña</label>
                         <input type="password"
-                        onChange={(event)=>{setLastname(event.target.value)}}
+                        onChange={(event)=>{setPassword(event.target.value)}}
                         name="password" ></input>
-                    {/* 
-                        <input type="submit" 
+                    
+                        <input type="submit"
                         onClick={addToList}
                         name="button_ingresar" value="Crear Cuenta"></input>
-                         */}
-                        <button onClick={addToList}>add tolist</button>
+                        
+                        {/* <button onClick={addToList}>add tolist</button> */}
                         <p className="redic_crear_cuenta">¿Ya tienes una cuenta?, Ingresa aqui <a href="#" onClick={()=>{toggleForm()}}>Iniciar cesión</a></p>
                     </form>
                     

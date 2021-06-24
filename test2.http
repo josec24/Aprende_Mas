@@ -1,0 +1,8 @@
+POST http://localhost:3001/signupa
+Content-Type: application1/json
+
+{
+    "name":"dsadasdd",
+    "email":"jd4@mdaidasdl.com",
+    "password":"jo23adsa4d",
+}
