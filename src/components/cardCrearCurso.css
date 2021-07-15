@@ -1,0 +1,15 @@
+.card_crear_curso{
+    box-shadow: 0px 1px 10px 3px rgba(0,0,0,0.54);
+    height: 200px;
+    width: 250px;
+    margin: 20px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card_crear_curso .button_crear_curso{
+    margin-top: 20px;
+}
