@@ -8,7 +8,7 @@ const customer= new Customers(req.body);
         await customer.save();
         res.json({message: 'nuevo cleinte agragado'});
     }catch(error){
-        consolo.log(error);
+        console.log(error);
         res.send(error);
         next();
     }
