@@ -1,4 +1,5 @@
 const usersCtrl={};
+const { request, response } = require('express');
 const passport=require('passport');
 
 const Users=require('../models/User');
@@ -13,14 +14,14 @@ usersCtrl.signup=async (request,response)=>{
         console.log('password debe tener mas de 4 caracteres')
     }else{
         const emailUser=await Users.findOne({email:email});
-        if(emailUser){
+        if(emailUser){//busca
             console.log('esta')
         }else{
             const signedUpUser=new Users({
                     usuario:request.body.usuario,
                     email:request.body.email,
                     password:request.body.password
-                })
+                })//creando
                 signedUpUser.password=await signedUpUser.encryptPassword(password)
                 signedUpUser.save()
                 .then(data=>{
@@ -32,9 +33,7 @@ usersCtrl.signup=async (request,response)=>{
         }
     }
 };
-
-
-
+//autenitica
 usersCtrl.signin=function(request,response,next){
     passport.authenticate('local', function(err, user, info) {
         // failureRedirect:'/signin',
@@ -59,8 +58,28 @@ usersCtrl.signin=function(request,response,next){
     })(request,response);
     // response.send(verificador)
 };
+usersCtrl.read=async(request,response)=>{
+    Users.find({},(err,result)=>{//busca todos los usuriaos
+        if(err){
+            response.send(err); 
+        }
+        response.send(result);
+    })
+};
 
-
+usersCtrl.update=async(request,response)=>{
+    const newProfile=request.body.newProfile;
+    const id=request.body.id;
+    try{
+        await Users.findById(id, (err,updateProfile)=>{
+            updateProfile.usuario=newProfile;
+            updateProfile.save();
+            response.send("update");
+        });
+    }catch(err){
+        console.log(err);
+    }
+};
 
 
 module.exports=usersCtrl;

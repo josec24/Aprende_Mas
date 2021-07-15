@@ -5,13 +5,13 @@ const cursoTemplate=new mongoose.Schema({
         type:String,
         require:true
     },
-    // descripcion:{
-    //     type:String,
-    //     require:false
-    // },
+    descripcion:{
+        type:String,
+        require:false
+    },
     codigo:{
         type:String,
-        require:true,
+        require:false,
         unique:true
     }
 

@@ -6,7 +6,7 @@ const Headerpro= ()=>{
     return(
         <Fragment>
 
-<div className= "header">
+            <div className= "header">
                 <div className="logo">
                     <h2>Aprende+</h2>
                 </div>
@@ -16,7 +16,7 @@ const Headerpro= ()=>{
                 <div className="usuario">
                 </div>
             </div>
-            </Fragment>
+        </Fragment>
     );
 }
 
