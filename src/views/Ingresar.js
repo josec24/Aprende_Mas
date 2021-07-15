@@ -3,21 +3,20 @@ import robot from '../images/robot.svg';
 import App_CSS from './Ingresar.css';
 import React,{useState,useEffect} from "react"
 import Axios from 'axios'
+import {useHistory} from "react-router-dom"
+
 
 function Ingresar(){
     const [usuario,setUsuario]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     
+    let history=useHistory();
+
     const [usuarioLista,setUsuarioLista]=useState([])
     const [verificador,setVerificador]=useState([])
 
-    useEffect(()=>{
-        Axios.get('http://localhost:3001/read').then((response)=>{
-            // console.log(response)
-            setUsuarioLista(response.data)
-        })
-    })
+
 
     // const verificar=()=>{
     //     console.log(usuarioLista[1])
@@ -32,7 +31,20 @@ function Ingresar(){
     function verificar(){
         // console.log(email+name+lastname)
 
-        Axios.post('http://localhost:3001/verificar',{
+        // Axios.post('http://localhost:3001/verificar',{
+        //     email:email,
+        //     password:password,
+        // }).then((response)=>{
+        //     // console.log(response.data)
+        //     setVerificador(response.data)
+        //     console.log(response.data);
+        //     if(response.data=="verdadero"){
+        //         // location.href ="/CrearCurso";
+        //     }else{
+        //     }
+        // })
+
+        Axios.post('http://localhost:3001/signin',{
             email:email,
             password:password,
         }).then((response)=>{
@@ -40,7 +52,8 @@ function Ingresar(){
             setVerificador(response.data)
             console.log(response.data);
             if(response.data=="verdadero"){
-                location.href ="/CrearCurso";
+                history.push("/CrearCurso");
+                // location.href ="/CrearCurso";
             }else{
             }
         })
