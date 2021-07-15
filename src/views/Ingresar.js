@@ -24,8 +24,6 @@ function Ingresar(){
 
     async function verificar1(){
         verificar1()
-        
-        
     }
 
     function verificar(){
@@ -52,7 +50,7 @@ function Ingresar(){
             setVerificador(response.data)
             console.log(response.data);
             if(response.data=="verdadero"){
-                history.push("/CrearCurso");
+                history.push("/Inicio");
                 // location.href ="/CrearCurso";
             }else{
             }

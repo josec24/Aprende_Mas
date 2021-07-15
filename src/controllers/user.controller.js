@@ -45,11 +45,11 @@ usersCtrl.signin=function(request,response,next){
         // user will be set to false, if not authenticated
         if (!user) {
             
-            res.status(401).json(info); //info contains the error message
+            response.status(401).json(info); //info contains the error message
         } else {
             response.send('verdadero')
             // if user authenticated maintain the session
-            req.logIn(user, function() {
+            request.logIn(user, function() {
                 // do whatever here on successful login
                 
                 

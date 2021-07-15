@@ -1,0 +1,4 @@
+.crear_curso_container .crear_cards_cursos{
+    display: flex;
+    justify-content: center;
+}
