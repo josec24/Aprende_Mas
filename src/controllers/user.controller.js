@@ -1,5 +1,5 @@
 const usersCtrl={};
-const { request, response } = require('express');
+
 const passport=require('passport');
 
 const Users=require('../models/User');

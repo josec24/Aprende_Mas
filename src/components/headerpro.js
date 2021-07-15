@@ -1,6 +1,5 @@
 import React,{Fragment} from 'react';
 
-import header1css from './headerpro.css';
 
 const Headerpro= ()=>{
     return(
