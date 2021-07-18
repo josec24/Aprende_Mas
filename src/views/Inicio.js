@@ -1,8 +1,6 @@
 import React from 'react';
 
 import Curso_CSS from './Curso.css';
-
-import Header from '../components/header1'
 import CardCursoInicio from '../components/cardCursoInicio'
 import {useHistory} from "react-router-dom"
 
@@ -10,8 +8,8 @@ function CursoInicio(){
 
     let history=useHistory();
 
-    function dada(){
-        console.log('dada')
+    function redictCrear(){
+        console.log('redirect')
         history.push("/CrearCursoInicio")
     }
 
@@ -30,7 +28,7 @@ function CursoInicio(){
                 {/* <input type="submit"
                     onClick={history.push("/CrearCursoInicio")}
                 name="crearcursos"></input> */}
-                <button onClick={dada}>
+                <button onClick={redictCrear}>
                     Crear un nuevo curso
                 </button>
                 </div>

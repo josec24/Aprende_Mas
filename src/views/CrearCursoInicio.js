@@ -1,11 +1,21 @@
 import React from 'react';
 
 import CrearCursoInicioCss from './CrearCursoInicioCss.css'
-
-import Header from '../components/header1'
+import {useHistory} from "react-router-dom"
 import CardCrearCurso from '../components/cardCrearCurso'
 
 function CrearCursoInicio(){
+    let history=useHistory();
+
+
+
+    function verificar(){
+        history.push("/Profile");
+    }
+
+
+
+
     return(
         <div className="crear_curso_container">
             <div className= "headerd">
@@ -18,7 +28,7 @@ function CrearCursoInicio(){
                 <div className="titulo">
                     <h2>Crear Curso</h2>
                 </div>
-                <div className="usuario">
+                <div className="usuario" onClick={verificar}>
                 </div>
             </div>
             </div>

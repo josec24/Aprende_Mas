@@ -15,7 +15,11 @@ const signUpTemplate=new mongoose.Schema({
     password:{
         type:String,
         require:false
-    }
+    },
+    rol:{
+        type:String,
+        require:true
+    },
 
     
     // },

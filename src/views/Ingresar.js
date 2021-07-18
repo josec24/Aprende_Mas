@@ -16,61 +16,34 @@ function Ingresar(){
     const [usuarioLista,setUsuarioLista]=useState([])
     const [verificador,setVerificador]=useState([])
 
-
-
-    // const verificar=()=>{
-    //     console.log(usuarioLista[1])
-    // }
-
-    async function verificar1(){
-        verificar1()
-    }
-
     function verificar(){
-        // console.log(email+name+lastname)
-
-        // Axios.post('http://localhost:3001/verificar',{
-        //     email:email,
-        //     password:password,
-        // }).then((response)=>{
-        //     // console.log(response.data)
-        //     setVerificador(response.data)
-        //     console.log(response.data);
-        //     if(response.data=="verdadero"){
-        //         // location.href ="/CrearCurso";
-        //     }else{
-        //     }
-        // })
-
         Axios.post('http://localhost:3001/signin',{
             email:email,
             password:password,
         }).then((response)=>{
             // console.log(response.data)
+            localStorage.setItem("token",response.data.token)
             setVerificador(response.data)
-            console.log(response.data);
-            if(response.data=="verdadero"){
+            console.log(response.data.auth);
+            if(response.data.auth==true){
+                userAuthenticated()
                 history.push("/Inicio");
-                // location.href ="/CrearCurso";
             }else{
             }
         })
-
-        // setTimeout(function(){
-        //     // console.log(response.data);
-        //     if(verificador=="verdadero"){
-        //         location.href ="/CrearCurso";
-        //     }else{
-        //     }
-        // },50);
-        
-        // console.log(verificador)
-        // if(verificador=="verdadero"){
-        //     location.href ="/CrearCurso";
-        // }else{
-        // }
-
     }
+
+    const userAuthenticated=()=>{
+        Axios.get('http://localhost:3001/isUserAuth',{
+            
+            headers:{
+                "x-access-token":localStorage.getItem("token"),
+            },
+        }).then((response)=>{
+            console.log(response);
+        })
+    }
+
 
     const addToList=()=>{
         // console.log(email+name+lastname)
@@ -135,15 +108,12 @@ function Ingresar(){
                         <input type="password"
                         onChange={(event)=>{setPassword(event.target.value)}}
                         name="password" ></input>
-                    
                         <input type="submit"
                         onClick={addToList}
                         name="button_ingresar" value="Crear Cuenta"></input>
-                        
                         {/* <button onClick={addToList}>add tolist</button> */}
                         <p className="redic_crear_cuenta">¿Ya tienes una cuenta?, Ingresa aqui <a href="#" onClick={()=>{toggleForm()}}>Iniciar cesión</a></p>
                     </form>
-                    
                     }
                 </div>
             </div>
