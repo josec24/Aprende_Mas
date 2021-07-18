@@ -5,10 +5,18 @@ const cursoTemplate=new mongoose.Schema({
         type:String,
         require:true
     },
+    // descripcion:{
+    //     type:String,
+    //     require:false
+    // },
     codigo:{
         type:String,
-        
+        require:true,
         unique:true
+    },
+    profesor:{
+        type:String,
+        require:true
     }
 
     // },

@@ -1,27 +1,50 @@
 const express=require('express')
 const userRouter=express.Router()
-const Users=require('../models/User')
-const passport=require('passport');
+const jwt =require('jsonwebtoken');
 
 const {
     // renderSignUpForm,
     signup,
     // renderSigninForm,
     signin,
-    // logout
+    
     read,
     update,
+    // logout
     }=require('../controllers/user.controller');
-
-
-var verificador=""
 
 userRouter.post('/signup', signup);
 
 userRouter.post('/signin', signin);
+
+
+const verifyJMT=(req,res,next)=>{
+    const token=req.headers["x-access-token"];
+
+    if(!token){
+        res.send("No token")
+    }else{
+        jwt.verify(token,"jwtSecret",(err,decoded)=>{
+            if(err){
+                res.json({auth:false, message:"Fallo"})
+            }else{
+                req.email=decoded.email;
+                res.send(req.email)
+                next();
+            }
+        });
+    }
+
+};
+
+userRouter.get("/isUserAuth",verifyJMT,(request,response)=>{
+    response.send("Atenticado")
+});
+
 //////
 userRouter.get('/read',read);
 userRouter.put('/update',update);
+
 userRouter.get('/',(req,res)=>{
     console.log('Server get')
 })

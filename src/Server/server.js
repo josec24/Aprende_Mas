@@ -1,11 +1,14 @@
 const express=require('express')
-const app=express()
+
+const cookieParser = require("cookie-parser");
+
+
 const mongoose=require('mongoose')
 const userUrls=require('../Routes/user.routes')
 const cors=require('cors')
 const passport=require('passport');
 const session=require('express-session');
-
+const app=express()
 require('../config/passport')
 
 mongoose.connect('mongodb+srv://userjuan:aprendomas@cluster0.dzcfy.mongodb.net/store-api?retryWrites=true&w=majority',{
@@ -25,8 +28,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(cookieParser());
+
 
 app.use('/',userUrls)
+app.use(require('../Routes/curso.routes'));
 
 app.listen(3001,()=>{
     console.log("Server corriendo")

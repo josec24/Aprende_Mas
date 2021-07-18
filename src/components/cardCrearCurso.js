@@ -21,11 +21,24 @@ function CardCrearCurso(){
             console.log(response.data);
             if(response.data=="verdadero"){
                 history.push("/Inicio");
-                // location.href ="/CrearCurso";
+                UserAuthenticated()
             }else{
             }
         })
     }
+
+    const UserAuthenticated=()=>{
+        Axios.get('http://localhost:3001/isUserAuth',{
+            
+            headers:{
+                "x-access-token":localStorage.getItem("token"),
+            },
+        }).then((response)=>{
+            console.log('gag')
+            console.log(response.data);
+        })
+    }
+
 
     return(
         <Fragment>

@@ -15,6 +15,15 @@ cursosCtrl.addcurso=async (request,response)=>{
     }else{
         const newCursos=new Cursos({nombre,codigo});
         await newCursos.save();
+        
+        function loggedIn(req, res, next) {
+            if (req.user) {
+                console.log('logueado')
+            } else {
+                console.log(' no logueado')
+            }
+        }
+        loggedIn(request,response)
         console.log('Agregado en la bd')
         response.send('verdadero')
     }
