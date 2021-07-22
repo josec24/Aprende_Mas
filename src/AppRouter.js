@@ -7,6 +7,7 @@ import CrearCurso from './views/CrearCurso.js'
 import Inicio from './views/Inicio.js'
 import CrearCursoInicio from './views/CrearCursoInicio'
 import Profile from './views/Profile.js'
+import MisNotas from './views/MisNotas.js'
 
 export default function AppRouter() {
     return (
