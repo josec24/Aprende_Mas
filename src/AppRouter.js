@@ -21,6 +21,7 @@ export default function AppRouter() {
                 <Route exact path="/crearTeoria" component={CrearTeoria}></Route>
                 <Route exact path="/crearTema" component={CrearTema}></Route>
                 <Route exact path="/Profile" component={Profile} ></Route>
+                <Route exact path="/MisNotas" component={MisNotas} ></Route>
             </Switch>
         </Router>
     )
