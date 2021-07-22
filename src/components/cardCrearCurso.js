@@ -26,26 +26,10 @@ function CardCrearCurso(){
             }
         })
     }
-    
-    function AddNotas(){
-        Axios.post('http://localhost:3001/addnotas',{
-            nombre:nombre,
-            codigo:codigo,
-            nota1:"" ,
-            nota2:"" ,
-            nota3:"" ,
-        }).then((response)=>{
-            console.log(response.data);
-            if(response.data=="verdadero"){
-                history.push("/MisNotas");
-                UserAuthenticated()
-            }else{
-            }
-        })
-    } 
 
     const UserAuthenticated=()=>{
         Axios.get('http://localhost:3001/isUserAuth',{
+            
             headers:{
                 "x-access-token":localStorage.getItem("token"),
             },

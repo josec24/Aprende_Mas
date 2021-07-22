@@ -1,0 +1,14 @@
+.crear_curso_container  .crear_header .header .usuario{
+    background: #000;
+    height: 80px;
+    width: 80px;
+    display:grid;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 10;
+    size: 10;
+}
+.crear_curso_container .crear_cards_cursos{
+    display: flex;
+    justify-content: center;
+}
