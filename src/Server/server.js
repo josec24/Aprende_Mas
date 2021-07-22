@@ -33,8 +33,6 @@ app.use(cookieParser());
 
 app.use('/',userUrls)
 app.use(require('../Routes/curso.routes'));
-app.use(require('../Routes/tema.routes'));
-app.use(require('../Routes/teoria.routes'));
 
 app.listen(3001,()=>{
     console.log("Server corriendo")

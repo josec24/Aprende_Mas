@@ -19,22 +19,15 @@ function CardCursoInicio(){
         Axios.get('http://localhost:3001/getcurso',{
 
     }).then((response)=>{
-        // console.log(response.data.nombre);
+        console.log(response.data);
         setList(response.data)
     })
     })
 
-    function cursoObj(nombre,codigo){
-        let curso={
-            nombre:nombre,
-            codigo:codigo
-        };
-
-        console.log(curso)
-
-        localStorage.setItem("curso",JSON.stringify(curso))
+    function cursoObj(){
         history.push("/Curso")
     }
+    
 
     return(
         <Fragment>
@@ -42,13 +35,11 @@ function CardCursoInicio(){
                     {list.map((val,key)=>{
                         return <div className="card_curso">
                             <div className="nada_color">
-
+                                
                             </div>
                             <div className="curso_name">
-                            {/* <a onClick={cursoObj}>{val.nombre}</a> */}
-                            <a onClick={cursoObj.bind(this,val.nombre,val.codigo)}>{val.nombre}</a>
-
-                            </div>
+                            <a onClick={cursoObj}>{val.nombre}</a>
+                        </div>
                         {/* <h1>{val.nombre}</h1> */}
                         </div>
                     })}

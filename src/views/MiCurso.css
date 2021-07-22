@@ -6,17 +6,9 @@
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    /* flex-direction: column; */
-    justify-content: center;
-
+    flex-direction: column;
 }
 
-/* .contenido .text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-} */
 
 .header{
     background: #4162ff;
@@ -91,3 +83,17 @@
     color: #fff;
 }
 
+.mi_curso_container .crear_cards_cursos{
+    display: flex;
+    justify-content: center;
+}
+.mi_curso_container  .header  .usuario{
+    background: #000;
+    height: 30px;
+    width: 50px;
+    display:grid;
+    justify-content:last baseline;
+    padding: 20px;
+    z-index: 10;
+    size: 50%;
+}
