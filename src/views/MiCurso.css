@@ -6,9 +6,17 @@
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: center;
+
 }
 
+/* .contenido .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+} */
 
 .header{
     background: #4162ff;

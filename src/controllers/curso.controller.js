@@ -1,6 +1,6 @@
 const cursosCtrl={};
 const passport=require('passport');
-
+const jwt =require('jsonwebtoken');
 const Cursos=require('../models/Curso');
 
 cursosCtrl.addcurso=async (request,response)=>{
