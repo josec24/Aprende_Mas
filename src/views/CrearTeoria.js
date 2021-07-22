@@ -1,7 +1,23 @@
+import React,{Fragment,useState,useEffect} from 'react';
 import CrearCurso_CSS from './CrearCurso.css';
 import CardCreador from '../components/cardCreador'
+import {useHistory} from "react-router-dom"
 
-function CrearCurso(){
+function CrearTeoria(){
+
+    let history=useHistory();
+    let tema=''
+
+    obtener_localStorage()
+
+
+    function obtener_localStorage(){
+        let temai=JSON.parse(localStorage.getItem("tema"));
+        tema=temai
+        console.log(tema)
+    }
+
+
     return(
         <div className="crear_curso_container">
             <div className= "crear_header">
@@ -11,7 +27,7 @@ function CrearCurso(){
                     <h2>Aprende+</h2>
                 </div>
                 <div className="titulo">
-                    <h2>Inteligencia Artificial</h2>
+                    <h2>{tema.nombre}</h2>
                 </div>
                 <div className="usuario">
                 </div>
@@ -26,4 +42,4 @@ function CrearCurso(){
     );
 }
 
-export default CrearCurso
+export default CrearTeoria
